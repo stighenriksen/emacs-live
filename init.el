@@ -140,6 +140,7 @@
       (message "%s" (concat "This is Emacs Live " live-version))
     live-version))
 
+(live-add-packs (cddr (directory-files "~/.emacs.d/stigs-packs/live" 't)))
 
 ;; Load `~/.emacs-live.el`. This allows you to override variables such
 ;; as live-packs (allowing you to specify pack loading order)
