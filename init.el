@@ -124,8 +124,7 @@
                      "clojure-pack"
                      "lang-pack"
                      "power-pack"
-                     "git-pack"
-                     "bindings-pack"))
+                     "git-pack"))
        (live-dir (file-name-as-directory "live"))
        (dev-dir  (file-name-as-directory "dev")))
   (setq live-packs (mapcar (lambda (p) (concat live-dir p)) pack-names) )
@@ -220,7 +219,3 @@
 (setq default-buffer-file-coding-system 'utf-8-unix)
 ;; From Emacs wiki
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
-
-
-
-(load-file "~/.emacs.d/getrequest.el")

@@ -6,22 +6,20 @@
       (setenv "PATH" (concat (getenv "PATH") ":" "/usr/local/bin"))
       (setq exec-path (append exec-path '("/usr/local/bin")))))
 
-(if (not (string-match (expand-file-name "~/bin") (getenv "PATH")))
-    (progn
-      (setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/bin")))
-      (setq exec-path (append exec-path (expand-file-name "~/bin") ))))
+
 
 (if (eq system-type 'darwin)
     (progn
       ;; cocoa fullscreen
       ;; command = meta and option = control
       (setenv "PATH" (concat (getenv "PATH") ":" "/Library/PostgreSQL/9.1/bin"))
+      (setenv "PATH" (concat (getenv "PATH") ":" "//Users/stihenri/bin"))
       (setenv "CLOJURESCRIPT_HOME" "/Users/stig/lib/clojurescript")
       (setq exec-path (append exec-path '("/Library/PostgreSQL/9.1/bin")))
       (setq exec-path (append exec-path '("/Users/stig/lib")))
+      (setq exec-path (append exec-path '("/Users/stihenri/bin")))
       (setq ns-command-modifier 'meta)
       (setq ns-option-modifier 'control)))
-
 (setenv "PATH" (concat (getenv "PATH") ":" "/Users/stihenri/.rvm/gems/ruby-1.9.3-p286/bin"))
 
 
