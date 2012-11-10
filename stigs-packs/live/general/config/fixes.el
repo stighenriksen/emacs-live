@@ -6,6 +6,11 @@
       (setenv "PATH" (concat (getenv "PATH") ":" "/usr/local/bin"))
       (setq exec-path (append exec-path '("/usr/local/bin")))))
 
+(if (not (string-match (expand-file-name "~/bin") (getenv "PATH")))
+    (progn
+      (setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/bin")))
+      (setq exec-path (append exec-path (expand-file-name "~/bin") ))))
+
 (if (eq system-type 'darwin)
     (progn
       ;; cocoa fullscreen

@@ -197,3 +197,30 @@
 
 ")))
 )
+
+(global-auto-revert-mode)
+(add-hook 'term-mode-hook (lambda()
+                (yas-minor-mode -1)))
+(put 'erase-buffer 'disabled nil)
+
+;(set-face-attribute 'default nil :height 120)
+(setq locale-coding-system 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8-unix)
+(set-selection-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+(set-locale-environment "en_US.UTF-8-UNIX")
+
+;; set up unicode
+(prefer-coding-system       'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8-unix)
+;; This from a japanese individual.  I hope it works.
+(setq default-buffer-file-coding-system 'utf-8-unix)
+;; From Emacs wiki
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
+
+
+(load-file "~/.emacs.d/getrequest.el")
