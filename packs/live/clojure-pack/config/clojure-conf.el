@@ -37,9 +37,10 @@
 
 (add-hook 'clojure-mode-hook
           '(lambda ()
-            (if (string/ends-with (buffer-file-name) ".cljs")
-                (define-key clojure-mode-map (kbd "C-x C-e") 'lisp-eval-last-sexp)
-              (define-key clojure-mode-map (kbd "C-x C-r") 'lisp-eval-region))))
+             (if (string/ends-with (buffer-file-name) ".cljs")
+                 (progn
+                   (define-key clojure-mode-map (kbd "C-x C-e") 'lisp-eval-last-sexp)
+                   (define-key clojure-mode-map (kbd "C-x C-r") 'lisp-eval-region)))))
 
 ;;command to align let statements
 ;;To use: M-x align-cljlet
