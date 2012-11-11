@@ -52,7 +52,7 @@
 (require 'clojurescript-mode)
 (setq auto-mode-alist (append '(("\\.cljs$" . clojurescript-mode))
                               auto-mode-alist))
-(add-hook clojurescript-mode-hook
+(add-hook 'clojurescript-mode-hook
           'clojure-disable-nrepl)
 
 (dolist (x '(scheme emacs-lisp lisp clojure))
