@@ -30,18 +30,6 @@
           (lambda ()
             (setq buffer-save-without-query t)))
 
-(defun string/ends-with (s ending)
-      "return non-nil if string S ends with ENDING."
-      (let ((elength (length ending)))
-        (string= (substring s (- 0 elength)) ending)))
-
-(add-hook 'clojure-mode-hook
-          '(lambda ()
-             (if (string/ends-with (buffer-file-name) ".cljs")
-                 (progn
-                   (define-key clojure-mode-map (kbd "C-x C-e") 'lisp-eval-last-sexp)
-                   (define-key clojure-mode-map (kbd "C-x C-r") 'lisp-eval-region)))))
-
 ;;command to align let statements
 ;;To use: M-x align-cljlet
 (live-add-pack-lib "align-cljlet")
@@ -61,8 +49,11 @@
 
 (define-key clojure-mode-map (kbd "M-t") 'live-transpose-words-with-hyphens)
 
-(setq auto-mode-alist (append '(("\\.cljs$" . clojure-mode))
+(require 'clojurescript-mode)
+(setq auto-mode-alist (append '(("\\.cljs$" . clojurescript-mode))
                               auto-mode-alist))
+(add-hook clojurescript-mode-hook
+          'clojure-disable-nrepl)
 
 (dolist (x '(scheme emacs-lisp lisp clojure))
   (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'enable-paredit-mode)

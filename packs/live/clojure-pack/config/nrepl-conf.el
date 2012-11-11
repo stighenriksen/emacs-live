@@ -25,6 +25,7 @@
             (define-key nrepl-mode-map
               (kbd "}") 'paredit-close-curly)))
 
+
 (setq nrepl-popup-stacktraces nil)
 (add-to-list 'same-window-buffer-names "*nrepl*")
 

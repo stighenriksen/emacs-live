@@ -124,11 +124,12 @@
                      "clojure-pack"
                      "lang-pack"
                      "power-pack"
-                     "git-pack"))
+                     "git-pack"
+                     "bindings-pack"))
        (live-dir (file-name-as-directory "live"))
        (dev-dir  (file-name-as-directory "dev")))
   (setq live-packs (mapcar (lambda (p) (concat live-dir p)) pack-names) )
-  (setq live-dev-pack-list (mapcar (lambda (p) (concat dev-dir p)) pack-names) ))
+  (setq live-dev-pack-list (mapcar (lambda (p) (concat dev-dir p)) pack-names)))
 
 
 ;; Helper fn for loading live packs
